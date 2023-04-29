@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant delivery online", "Restaurant delivery online\Restaurant delivery online.csproj", "{3AE360C2-FEF5-484F-A847-5AB45A7AAC11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantDeliveryOnline", "Restaurant delivery online\RestaurantDeliveryOnline.csproj", "{3AE360C2-FEF5-484F-A847-5AB45A7AAC11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{5035C2BC-0633-4FC4-8281-965E3CDA99F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{5035C2BC-0633-4FC4-8281-965E3CDA99F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{0844A09E-79BD-4FB2-BB6A-8314D90F6845}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{0844A09E-79BD-4FB2-BB6A-8314D90F6845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

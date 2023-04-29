@@ -1,0 +1,15 @@
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\bin\Debug\net6.0\Core.dll
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\bin\Debug\net6.0\Core.pdb
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+E:\iti\Freelance\Restaurant delivery online\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll

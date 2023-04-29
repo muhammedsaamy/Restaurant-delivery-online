@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    internal class Menu
+    public class Menu
     {
+        public int Id { get; set; }
+        public int MenuItemId { get; set; }
+        public MenuItem MenuItem { get; set; }
+        public Restaurant Restaurant { get; set; }
     }
 }

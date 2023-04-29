@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    internal class Order
+    public class Order
     {
+        public int Id { get; set; }
+        public decimal TotalPrice { get; set; }
+        public int Quantity { get; set; }
+        public int MenuItemId { get; set; }
+        public string UserPhone { get; set; }
+        public User User { get; set; }
     }
 }

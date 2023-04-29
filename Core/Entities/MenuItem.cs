@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    internal class MenuItems
+    public class MenuItem
     {
+        public int Id { get; set; }
+        public string MenuItemDescription { get; set; }
+        public string MenuItemImage { get; set; }
+        public string MenuItemTitle { get; set; }
+        public decimal Price { get; set; }
+
+        public Menu Menu { get; set;}
     }
 }

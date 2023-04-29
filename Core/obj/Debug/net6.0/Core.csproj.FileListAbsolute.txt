@@ -1,0 +1,12 @@
+E:\iti\Freelance\Restaurant delivery online\Core\bin\Debug\net6.0\Core.deps.json
+E:\iti\Freelance\Restaurant delivery online\Core\bin\Debug\net6.0\Core.dll
+E:\iti\Freelance\Restaurant delivery online\Core\bin\Debug\net6.0\Core.pdb
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\Core.csproj.AssemblyReference.cache
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\Core.AssemblyInfoInputs.cache
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\Core.AssemblyInfo.cs
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\Core.csproj.CoreCompileInputs.cache
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\Core.dll
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\refint\Core.dll
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\Core.pdb
+E:\iti\Freelance\Restaurant delivery online\Core\obj\Debug\net6.0\ref\Core.dll
