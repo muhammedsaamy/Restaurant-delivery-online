@@ -13,7 +13,7 @@ namespace Core.Entities
         public string RestaurantName { get; set; }
         public string RestaurantDescription { get; set; }
         public string City { get; set; }
-        public int MenuId { get; set; }
+        //public int MenuId { get; set; }
         public Menu Menu { get; set; }
     }
 }

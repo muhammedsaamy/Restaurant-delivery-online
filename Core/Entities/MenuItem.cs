@@ -14,6 +14,8 @@ namespace Core.Entities
         public string MenuItemTitle { get; set; }
         public decimal Price { get; set; }
 
+        public int MenuId { get; set; }
+
         public Menu Menu { get; set;}
     }
 }

@@ -19,5 +19,11 @@ namespace Infrastructure.Data
         public DbSet<Menu> menus { get; set; }
         public DbSet<MenuItem> menuItems { get; set; }
         public DbSet<Order> orders { get; set; }
+        public DbSet<BasketItem> basketItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

@@ -9,8 +9,8 @@ namespace Core.Entities
     public class Menu
     {
         public int Id { get; set; }
-        public int MenuItemId { get; set; }
-        public MenuItem MenuItem { get; set; }
+        public int RestaurantId { get; set; }
+        public ICollection<MenuItem> MenuItem { get; set; }= new HashSet<MenuItem>();
         public Restaurant Restaurant { get; set; }
     }
 }

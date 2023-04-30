@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Order
+    public class BasketItem
     {
         public int Id { get; set; }
-        public decimal SubPrice { get; set; }
+        public string ProductName { get; set; }
+        public decimal Price { get; set; }
+        public string PictureUrl { get; set; }
+        public int Quantity { get; set; }
         public decimal TotalPrice { get; set; }
-        public string UserPhone { get; set; }
-        public User User { get; set; }
-        public ICollection<BasketItem> Items { get; set; } = new HashSet<BasketItem>();
-
     }
 }
