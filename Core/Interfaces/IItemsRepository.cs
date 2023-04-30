@@ -9,8 +9,8 @@ namespace Core.Interfaces
 {
     public interface IItemsRepository
     {
-        Task<IReadOnlyList<MenuItem>> GetAllItemsAsync();
-        Task<MenuItem> AddItemToBAsketAsync(MenuItem item);
+        Task<IReadOnlyList<MenuItem>> GetAllItemsAsync(int MenuId);
+        Task<BasketItem> AddItemToBAsketAsync(MenuItem item);
         //Task<User> AddUserAsync(User user);
 
     }

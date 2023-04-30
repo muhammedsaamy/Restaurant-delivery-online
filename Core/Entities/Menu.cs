@@ -11,6 +11,6 @@ namespace Core.Entities
         public int Id { get; set; }
         public int RestaurantId { get; set; }
         public ICollection<MenuItem> MenuItem { get; set; }= new HashSet<MenuItem>();
-        public Restaurant Restaurant { get; set; }
+        //public Restaurant Restaurant { get; set; }
     }
 }

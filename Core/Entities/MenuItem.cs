@@ -16,6 +16,5 @@ namespace Core.Entities
 
         public int MenuId { get; set; }
 
-        public Menu Menu { get; set;}
     }
 }

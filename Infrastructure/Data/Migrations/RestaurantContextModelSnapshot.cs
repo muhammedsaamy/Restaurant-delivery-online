@@ -50,9 +50,15 @@ namespace Infrastructure.Data.Migrations
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("userPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
+
+                    b.HasIndex("userPhone");
 
                     b.ToTable("basketItems");
                 });
@@ -190,17 +196,23 @@ namespace Infrastructure.Data.Migrations
                     b.HasOne("Core.Entities.Order", null)
                         .WithMany("Items")
                         .HasForeignKey("OrderId");
+
+                    b.HasOne("Core.Entities.User", "user")
+                        .WithMany()
+                        .HasForeignKey("userPhone")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("Core.Entities.Menu", b =>
                 {
-                    b.HasOne("Core.Entities.Restaurant", "Restaurant")
+                    b.HasOne("Core.Entities.Restaurant", null)
                         .WithOne("Menu")
                         .HasForeignKey("Core.Entities.Menu", "RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Core.Entities.MenuItem", b =>

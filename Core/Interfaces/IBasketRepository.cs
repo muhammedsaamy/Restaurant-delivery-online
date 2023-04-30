@@ -14,9 +14,9 @@ namespace Core.Interfaces
         //public Task<Basket> DeleteItemFromBasket(int basketId, int itemId);
 
         //Task<IReadOnlyList<BasketItem>> GetAllBasketAsync();
-        public Task<User> GetUserAsync();
-        public Task<IReadOnlyList<BasketItem>> GetAllBasketItemAsync();
+        Task<User> GetUserAsync(string userPhone);
+        Task<IReadOnlyList<BasketItem>> GetAllBasketItemAsync(int basketId);
 
-        void DeleteItem(int itemId);
+        Task<bool> DeleteItem(BasketItem basketItem);
     }
 }

@@ -1,5 +1,4 @@
-﻿using Core.DTOs;
-using Core.Entities;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Core.Interfaces
 {
-    public interface IRestaurantRepository
+    public interface IMenuRepository
     {
-        Task<IReadOnlyList<RestaurantDto>> GetAllRestaurantsAsync();
+        Task<Menu> GetMenuByRestaurantIdAsync(int RestaurantId);
     }
 }
