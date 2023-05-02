@@ -13,43 +13,78 @@
 
 
 
-.pricetag{
-  white-space:nowrap;
-  position:relative;
-  margin:0 5px 0 10px;
-  displaY:inline-block;
-  height:25px;
-  border-radius: 0 5px 5px 0;
-  padding: 0 25px 0 15px;
-  background:#cccf04;
-  border: 1px solid #C7D2D4;
-  color:#2b2a2a;
-  line-height:23px;
+// .pricetag{
+//   white-space:nowrap;
+//   position:relative;
+//   margin:0 5px 0 10px;
+//   displaY:inline-block;
+//   height:25px;
+//   border-radius: 0 5px 5px 0;
+//   padding: 0 25px 0 15px;
+//   background:#cccf04;
+//   border: 1px solid #C7D2D4;
+//   color:#2b2a2a;
+//   line-height:23px;
+// }
+// .pricetag:after{
+//   position:absolute;
+//   right:0;
+//   margin:1px 7px;
+//   font-weight:bold;
+//   font-size:19px;
+//   // content:"\00D7";
+// }
+// .pricetag:before{
+//   position:absolute;
+//   background:#E8EDF0;
+//   content:"\25CF";
+//   color:rgb(182, 194, 18);
+//   text-shadow: 0 0 1px #aaa;
+//   font-size:12px;
+//   line-height:13px;
+//   text-indent:6px;
+//   top:3px;
+//   left:-10px;
+//   width: 18px;
+//   height: 18px;
+//   transform: rotate(45deg);
+//   border-left:1px solid #C7D2D4;
+//   border-bottom:1px solid #C7D2D4;
+// }
+
+
+
+
+// .card {
+//   position: relative;
+//   border: 1px solid #7e1212;
+//   border-radius: 5px;
+//   padding: 20px;
+// }
+
+.price-tag {
+  position: absolute;
+  top: 19px;
+  left: 205px;
+  width: 0;
+  border-top: 110px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-right: 149px solid rgb(255, 196, 0);
 }
-.pricetag:after{
-  position:absolute;
-  right:0;
-  margin:1px 7px;
-  font-weight:bold;
-  font-size:19px;
-  // content:"\00D7";
+
+.price-tag span {
+  position: absolute;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bolder;
+  top: -50px;
+  left: 70px;
+  font-size: 20px;
+  color: #fff;
 }
-.pricetag:before{
-  position:absolute;
-  background:#E8EDF0;
-  content:"\25CF";
-  color:rgb(182, 194, 18);
-  text-shadow: 0 0 1px #aaa;
-  font-size:12px;
-  line-height:13px;
-  text-indent:6px;
-  top:3px;
-  left:-10px;
-  width: 18px;
-  height: 18px;
-  transform: rotate(45deg);
-  border-left:1px solid #C7D2D4;
-  border-bottom:1px solid #C7D2D4;
-}
+
+
+
+
+
 
 

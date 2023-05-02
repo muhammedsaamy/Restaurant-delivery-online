@@ -6,21 +6,28 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from "@angular/common/http";
 import { MenuItemsComponent } from './menu-items/menu-items.component'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
+import { UserComponent } from './user/user.component';
+import { BasketComponent } from './basket/basket.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenuItemsComponent,
-    FilterPipe
+    FilterPipe,
+    UserComponent,
+    BasketComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
