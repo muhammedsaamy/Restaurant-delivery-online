@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-user',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class UserComponent {
 
-  constructor(private _Router:Router) { }
+  constructor(private _Router:Router, private location:Location) { }
 
   userForm:FormGroup = new FormGroup({
     'name': new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
@@ -18,6 +20,10 @@ export class UserComponent {
     'address': new FormControl(null,[Validators.required])
   });
 
+  goBack(){
+    this.location.back();
+  }
+
   submitForm()
   {
     const data = this.userForm.value;
@@ -25,8 +31,4 @@ export class UserComponent {
     this._Router.navigateByUrl('/baskett')
 
   }
-
-
-
-
 }

@@ -11,6 +11,7 @@ import { FilterPipe } from './filter.pipe';
 import { UserComponent } from './user/user.component';
 import { BasketComponent } from './basket/basket.component';
 import { ErrorComponent } from './error/error.component';
+import { CheckoutOrderComponent } from './checkout-order/checkout-order.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorComponent } from './error/error.component';
     FilterPipe,
     UserComponent,
     BasketComponent,
-    ErrorComponent
+    ErrorComponent,
+    CheckoutOrderComponent
   ],
   imports: [
     BrowserModule,

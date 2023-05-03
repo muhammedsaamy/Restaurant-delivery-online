@@ -21,16 +21,10 @@ export class HomeComponent implements OnInit{
   constructor(private restaurantService:ResaurantService, private activatedRoute:ActivatedRoute , private router:Router ) {
 
   }
+  
   ngOnInit(): void {
     this.getRestaurant();
   }
-
-
-
-  // navigatetoMenu(id:number){
-  //   this.id =id;
-  //   this.router.navigate(["/menu-items", id])
-  // }
 
   getRestaurant(){
     this.restaurantService.getRestaurants().subscribe({
@@ -40,32 +34,21 @@ export class HomeComponent implements OnInit{
         console.log(this.searchCity)
         this.RestaurantsList = res.filter(
           (x :any)  => {
-            // any can be an interface from return data
-            return x.restaurantName.toLowerCase().includes(this.searchText)
-            && x.city.toLowerCase().includes(this.searchCity);
+            // any we can replace it by an interface from return data
+            return x.restaurantName.toLowerCase().includes(this.searchText.toLocaleLowerCase())
+            && x.city.toLowerCase().includes(this.searchCity.toLocaleLowerCase());
           }
         )
       },
       error:(error) => {console.log(error)},
       complete:()=> {
         //  (x:any) =>  this.searchCity = this.RestaurantsLis.city;
-
         }
     });
   }
 
    OnSearch(){
    this.getRestaurant();
-
-  // this.RestaurantsList = this.RestaurantsList.filter(
-  //   x => {
-  //     return x.restaurantName.toLowerCase().includes(this.searchText);
-  //   }
-
-  // )
   console.log(this.searchText)
 }
-
-
-
 }

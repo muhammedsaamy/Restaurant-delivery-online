@@ -34,8 +34,8 @@
         </button>
       </div>
 
-      <div>
-        <div class="container w-75 d-flex justify-content-between">
+      <div >
+        <div class="container w-75 d-flex justify-content-between mt-3">
           <div class="d-flex align-items-center gap-2">
             <img class="imgg" src="assets/Images/Home/icons/icon1.jpeg" />
             <div>
@@ -69,7 +69,7 @@
     </div>
   </div>
 
-  <div class="container-fluid border border-dark roundedCard border-2  py-5  m-auto bg-white text-black row ">
+  <div class="container-fluid border border-dark roundedCard border-2 mt-5  py-5  m-auto bg-white text-black row ">
 
     <div class="crd container-fluid w-25 border border-dark m-auto p-0 col-4"
     *ngFor="let Restaurant of RestaurantsList">
@@ -80,8 +80,10 @@
       <div class=" p-4">
         <h4>{{Restaurant.restaurantName}}</h4>
         <p>{{Restaurant.restaurantDescription}}</p>
-        <a routerLink="/items/{{Restaurant?.id}}" style="cursor: pointer; font-weight: bolder;" >
-          Menu <a class="fa fa-arrow-right me-2"></a>
+          <a class="btn btn-outline-danger" routerLink="/items/{{Restaurant?.id}}" style="cursor: pointer; font-weight: bolder;" >
+            Menu
+           <a style="color: rgb(231, 166, 166); text-decoration: none;" class="fa fa-arrow-right me-2">
+          </a>
       </a>
       </div>
     </div>
