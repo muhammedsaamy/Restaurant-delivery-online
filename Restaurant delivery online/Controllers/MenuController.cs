@@ -9,10 +9,9 @@ namespace Restaurant_delivery_online.Controllers
         private readonly IMenuRepository _menuRepository;
         private readonly IUserRepository _userRepository;
 
-        public MenuController(IMenuRepository menuRepository, IUserRepository userRepository)
+        public MenuController(IMenuRepository menuRepository)
         {
             this._menuRepository = menuRepository;
-            this._userRepository = userRepository;
         }
 
         [HttpGet]

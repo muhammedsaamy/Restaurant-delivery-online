@@ -32,9 +32,9 @@ namespace Infrastructure.Data
             return basketItems;
         }
 
-        public async Task<User> GetUserAsync(string userPhone)
+        public async Task<User> GetUserAsync(int userId)
         {
-            var user = await _context.Users.Where(u => u.Phone == userPhone).FirstOrDefaultAsync();
+            var user = await _context.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
             return user;
         }
     }

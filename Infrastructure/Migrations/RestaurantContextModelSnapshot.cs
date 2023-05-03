@@ -4,18 +4,16 @@ using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Infrastructure.Data.Migrations
+namespace Infrastructure.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    [Migration("20230429234648_deletebasket")]
-    partial class deletebasket
+    partial class RestaurantContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,13 +123,12 @@ namespace Infrastructure.Data.Migrations
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("UserPhone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserPhone");
+                    b.HasIndex("UserId");
 
                     b.ToTable("orders");
                 });
@@ -167,8 +164,11 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.User", b =>
                 {
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -182,7 +182,11 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Phone");
+                    b.Property<string>("userPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
@@ -190,37 +194,33 @@ namespace Infrastructure.Data.Migrations
             modelBuilder.Entity("Core.Entities.BasketItem", b =>
                 {
                     b.HasOne("Core.Entities.Order", null)
-                        .WithMany("Items")
+                        .WithMany("basketItems")
                         .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("Core.Entities.Menu", b =>
                 {
-                    b.HasOne("Core.Entities.Restaurant", "Restaurant")
+                    b.HasOne("Core.Entities.Restaurant", null)
                         .WithOne("Menu")
                         .HasForeignKey("Core.Entities.Menu", "RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Core.Entities.MenuItem", b =>
                 {
-                    b.HasOne("Core.Entities.Menu", "Menu")
+                    b.HasOne("Core.Entities.Menu", null)
                         .WithMany("MenuItem")
                         .HasForeignKey("MenuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("Core.Entities.Order", b =>
                 {
                     b.HasOne("Core.Entities.User", "User")
-                        .WithMany("Orders")
-                        .HasForeignKey("UserPhone")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -234,18 +234,13 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.Order", b =>
                 {
-                    b.Navigation("Items");
+                    b.Navigation("basketItems");
                 });
 
             modelBuilder.Entity("Core.Entities.Restaurant", b =>
                 {
                     b.Navigation("Menu")
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Core.Entities.User", b =>
-                {
-                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

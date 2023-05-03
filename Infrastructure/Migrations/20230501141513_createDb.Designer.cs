@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Infrastructure.Data.Migrations
+namespace Infrastructure.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    [Migration("20230429233903_initialCreate")]
-    partial class initialCreate
+    [Migration("20230501141513_createDb")]
+    partial class createDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,19 +23,6 @@ namespace Infrastructure.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("Core.Entities.Basket", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("baskets");
-                });
 
             modelBuilder.Entity("Core.Entities.BasketItem", b =>
                 {
@@ -99,9 +86,6 @@ namespace Infrastructure.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("BasketId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MenuId")
                         .HasColumnType("int");
 
@@ -122,8 +106,6 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BasketId");
-
                     b.HasIndex("MenuId");
 
                     b.ToTable("menuItems");
@@ -143,13 +125,12 @@ namespace Infrastructure.Data.Migrations
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("UserPhone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserPhone");
+                    b.HasIndex("UserId");
 
                     b.ToTable("orders");
                 });
@@ -185,8 +166,11 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.User", b =>
                 {
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -200,7 +184,11 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Phone");
+                    b.Property<string>("userPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
@@ -208,50 +196,37 @@ namespace Infrastructure.Data.Migrations
             modelBuilder.Entity("Core.Entities.BasketItem", b =>
                 {
                     b.HasOne("Core.Entities.Order", null)
-                        .WithMany("Items")
+                        .WithMany("basketItems")
                         .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("Core.Entities.Menu", b =>
                 {
-                    b.HasOne("Core.Entities.Restaurant", "Restaurant")
+                    b.HasOne("Core.Entities.Restaurant", null)
                         .WithOne("Menu")
                         .HasForeignKey("Core.Entities.Menu", "RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Core.Entities.MenuItem", b =>
                 {
-                    b.HasOne("Core.Entities.Basket", null)
-                        .WithMany("OrderItems")
-                        .HasForeignKey("BasketId");
-
-                    b.HasOne("Core.Entities.Menu", "Menu")
+                    b.HasOne("Core.Entities.Menu", null)
                         .WithMany("MenuItem")
                         .HasForeignKey("MenuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("Core.Entities.Order", b =>
                 {
                     b.HasOne("Core.Entities.User", "User")
-                        .WithMany("Orders")
-                        .HasForeignKey("UserPhone")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Core.Entities.Basket", b =>
-                {
-                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("Core.Entities.Menu", b =>
@@ -261,18 +236,13 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.Order", b =>
                 {
-                    b.Navigation("Items");
+                    b.Navigation("basketItems");
                 });
 
             modelBuilder.Entity("Core.Entities.Restaurant", b =>
                 {
                     b.Navigation("Menu")
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Core.Entities.User", b =>
-                {
-                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

@@ -11,7 +11,7 @@ namespace Core.Interfaces
     {
         //public Task<User> GetUserAsync();
         //public Task<IReadOnlyList<BasketItem>> GetAllBasketItemAsync();
-        public Task<Order> PlaceOrderAsync(string userPhone, decimal price, string custPhone);
+        public Task<Order> AddOrderAsync(Order order);
 
     }
 }

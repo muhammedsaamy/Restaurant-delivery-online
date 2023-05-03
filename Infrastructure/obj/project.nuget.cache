@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qahuvkFisrZCjz6xv6S9OeNoikPw0W/lLCIyhVW2hrMtVhqVmvQoBmMjOgarjd4eqP3Pg7NCY610c8R+piMkRQ==",
+  "dgSpecHash": "paatekPbJC99gqpgaOdTxGJsel45ZgbWdqAF2NoX377YBxXMoCTdpTq19sgKcZu2nt4cpkZ4s83zX4L/lM4HKg==",
   "success": true,
   "projectFilePath": "E:\\iti\\Freelance\\Restaurant delivery online\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Muhammed Samy\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Muhammed Samy\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Muhammed Samy\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Muhammed Samy\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Muhammed Samy\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Muhammed Samy\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Muhammed Samy\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.16\\microsoft.entityframeworkcore.6.0.16.nupkg.sha512",

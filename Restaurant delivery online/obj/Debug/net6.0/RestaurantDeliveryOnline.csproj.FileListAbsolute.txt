@@ -54,7 +54,6 @@ E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\RestaurantDeliveryOnline.AssemblyInfoInputs.cache
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\RestaurantDeliveryOnline.AssemblyInfo.cs
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\RestaurantDeliveryOnline.csproj.CoreCompileInputs.cache
-E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\RestaurantDeliveryOnline.MvcApplicationPartsAssemblyInfo.cs
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\RestaurantDeliveryOnline.MvcApplicationPartsAssemblyInfo.cache
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\staticwebassets\msbuild.RestaurantDeliveryOnline.Microsoft.AspNetCore.StaticWebAssets.props
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\staticwebassets\msbuild.build.RestaurantDeliveryOnline.props
@@ -70,3 +69,5 @@ E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\RestaurantDeliveryOnline.pdb
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\RestaurantDeliveryOnline.genruntimeconfig.cache
 E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\obj\Debug\net6.0\ref\RestaurantDeliveryOnline.dll
+E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\bin\Debug\net6.0\AutoMapper.dll
+E:\iti\Freelance\Restaurant delivery online\Restaurant delivery online\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

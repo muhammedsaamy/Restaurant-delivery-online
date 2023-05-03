@@ -18,11 +18,14 @@ namespace Infrastructure.Data
             this._context = context;
         }
 
-        public async Task<Order> PlaceOrderAsync(string userPhone, decimal price, string custPhone)
+        public async Task<Order> AddOrderAsync(Order order)
         {
-            //ToDO
-            var basketitems = await _context.basketItems.Where(b => b.userPhone == userPhone).ToListAsync();
-            return new Order { };
+
+            //var basketitems = await _context.basketItems.Where(b => b.userPhone == userPhone).ToListAsync();
+
+            _context.orders.Add(order);
+            await _context.SaveChangesAsync();
+            return order;
         }
     }
 }

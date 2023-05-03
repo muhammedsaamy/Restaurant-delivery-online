@@ -2,24 +2,12 @@
 
 #nullable disable
 
-namespace Infrastructure.Data.Migrations
+namespace Infrastructure.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class createDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "baskets",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_baskets", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "restaurants",
                 columns: table => new
@@ -40,14 +28,16 @@ namespace Infrastructure.Data.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Phone = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    userPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Phone);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -77,16 +67,16 @@ namespace Infrastructure.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SubPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    UserPhone = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_orders_Users_UserPhone",
-                        column: x => x.UserPhone,
+                        name: "FK_orders_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Phone",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -100,17 +90,11 @@ namespace Infrastructure.Data.Migrations
                     MenuItemImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MenuItemTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    MenuId = table.Column<int>(type: "int", nullable: false),
-                    BasketId = table.Column<int>(type: "int", nullable: true)
+                    MenuId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_menuItems", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_menuItems_baskets_BasketId",
-                        column: x => x.BasketId,
-                        principalTable: "baskets",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_menuItems_menus_MenuId",
                         column: x => x.MenuId,
@@ -148,11 +132,6 @@ namespace Infrastructure.Data.Migrations
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_menuItems_BasketId",
-                table: "menuItems",
-                column: "BasketId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_menuItems_MenuId",
                 table: "menuItems",
                 column: "MenuId");
@@ -164,9 +143,9 @@ namespace Infrastructure.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_UserPhone",
+                name: "IX_orders_UserId",
                 table: "orders",
-                column: "UserPhone");
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -179,9 +158,6 @@ namespace Infrastructure.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "orders");
-
-            migrationBuilder.DropTable(
-                name: "baskets");
 
             migrationBuilder.DropTable(
                 name: "menus");

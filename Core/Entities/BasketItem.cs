@@ -17,9 +17,9 @@ namespace Core.Entities
         public string PictureUrl { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice { get; set; }
-        public virtual string userPhone { get; set;}
+        //public int userId { get; set; }
 
-        [ForeignKey("userPhone")]
-        public User user { get; set; }
+        //[ForeignKey("userId")]
+        //public User user { get; set; }
     }
 }
