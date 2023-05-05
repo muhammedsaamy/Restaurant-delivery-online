@@ -23,7 +23,7 @@
             <div class="group-input mb-3 col-6">
               <label>Phone</label>
               <div class="phone-icon">
-                <input formControlName="phone" placeholder="Enter your Phone number" type="phone" class="form-control">
+                <input formControlName="phone" placeholder="Enter your Phone number" type="text" class="form-control">
                 <i class="fa fa-phone"></i>
               </div>
               <div *ngIf="userForm.controls['phone'].touched&&userForm.controls['phone'].invalid" class="text-danger">
@@ -55,6 +55,7 @@
             <p *ngIf="userForm.controls['address'].errors?.['required']">address is required</p>
           </div>
         </div>
+
 
         <button (click)="goBack()" style="font-weight: bolder;" class="btn btn-warning col-2">
           <span> BACK </span>

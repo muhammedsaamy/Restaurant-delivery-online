@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResaurantService } from './resaurant.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -18,11 +19,18 @@ export class HomeComponent implements OnInit{
   searchCity : string = ''
 
 
-  constructor(private restaurantService:ResaurantService, private activatedRoute:ActivatedRoute , private router:Router ) {
+  constructor(private restaurantService:ResaurantService, private activatedRoute:ActivatedRoute , private router:Router, private spinner: NgxSpinnerService) {
 
   }
-  
+
   ngOnInit(): void {
+    this.spinner.show();
+
+    // setTimeout(() => {
+    //   /** spinner ends after 5 seconds */
+    //   this.spinner.hide();
+    // }, 5000);
+
     this.getRestaurant();
   }
 
@@ -41,9 +49,7 @@ export class HomeComponent implements OnInit{
         )
       },
       error:(error) => {console.log(error)},
-      complete:()=> {
-        //  (x:any) =>  this.searchCity = this.RestaurantsLis.city;
-        }
+      complete:()=> {this.spinner.hide();}
     });
   }
 

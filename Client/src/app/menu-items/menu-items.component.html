@@ -2,11 +2,11 @@
  class=" py-5 m-auto bg-white text-black col-12 row vh-100"
 >
   <div class="m-auto p-0 col-6  d-flex align-items-center " *ngFor="let item of itemsList">
-      <div class="row ms-4 m-5" style="background-color: rgb(237, 240, 240);">
+      <div  class="row ms-4 m-5" style="background-color: rgb(237, 240, 240);">
           <div class="p-0 col-6 ">
             <img class="img-fluid" src="{{item.menuItemImage}}" />
           </div>
-          <div class=" col-6">
+          <div style="overflow: hidden;" class=" col-6">
             <input class="checkbox" type="checkbox" value="{{item.id}}" (change)="updateSelectedItems(item , $event)"> {{item.name}}
             <h4 style="display: inline-block;">{{item.menuItemTitle}}</h4>
             <p>{{item.menuItemDescription}}</p>
@@ -14,8 +14,12 @@
         </div>
     </div>
   </div>
-  <div>
-    <button style="font-weight: bolder; float: right;" class="btn btn-warning me-5 mt-2" type="submit" (click)="SaveInLocalStorage()" [disabled]="selectedItems.length === 0"
+  <div >
+
+    <button (click)="goBack()" style="font-weight: bolder;" class="btn btn-warning mb-5">
+      <span> BACK </span>
+    </button>
+    <button style="font-weight: bolder; float: right;" class="btn btn-warning me-5 mb-4" type="submit" (click)="SaveInLocalStorage()" [disabled]="selectedItems.length === 0"
     [routerLink]="['/user']" >Next</button>
   </div>
 </div>

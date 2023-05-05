@@ -1,3 +1,6 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+
 <div class="home vh-100 text-white">
   <!-- <img class="homeImg img-fluid vh-100 w-100" src="assets/Images/Home/HomeBackground.jpeg"> -->
 
@@ -78,7 +81,7 @@
         <img class="img-fluid" src="{{Restaurant.restaurantImage}}" />
       </div>
       <div class=" p-4">
-        <h4>{{Restaurant.restaurantName}}</h4>
+        <h4>{{Restaurant.restaurantName | uppercase}}</h4>
         <p>{{Restaurant.restaurantDescription}}</p>
           <a class="btn btn-outline-danger" routerLink="/items/{{Restaurant?.id}}" style="cursor: pointer; font-weight: bolder;" >
             Menu
@@ -88,7 +91,7 @@
       </div>
     </div>
     <div *ngIf="RestaurantsList.length <1">
-      <h1 class="text-center" >No Items Here</h1>
+      <h1 *ngIf="!RestaurantsList" class="text-center" >No Items Here</h1>
     </div>
 
   </div>

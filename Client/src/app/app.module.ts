@@ -12,6 +12,9 @@ import { UserComponent } from './user/user.component';
 import { BasketComponent } from './basket/basket.component';
 import { ErrorComponent } from './error/error.component';
 import { CheckoutOrderComponent } from './checkout-order/checkout-order.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { CheckoutOrderComponent } from './checkout-order/checkout-order.componen
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

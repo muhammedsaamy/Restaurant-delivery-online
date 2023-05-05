@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ItemsService } from './items.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-menu-items',
@@ -12,7 +14,7 @@ export class MenuItemsComponent {
   id:number=0;
   selectedItems: {id:number , name:string , description:string , imgUrl:string , price:number}[] = [];
 
-  constructor(private itemsService:ItemsService, private router:Router, private activatedRoute:ActivatedRoute) {
+  constructor(private itemsService:ItemsService, private router:Router, private activatedRoute:ActivatedRoute, private location:Location) {
 
   }
   ngOnInit(): void {
@@ -30,6 +32,12 @@ export class MenuItemsComponent {
     });
     console.log(this.id)
   }
+
+  goBack(){
+    this.location.back();
+  }
+
+
 
 
   updateSelectedItems(menu: {id:number , name:string , description:string , imgUrl:string , price:number}, event: any) {
