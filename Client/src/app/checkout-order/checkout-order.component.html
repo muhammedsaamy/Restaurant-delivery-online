@@ -60,7 +60,7 @@
 	<div class="container">
 		<h1>Thank You {{user.name | uppercase}} for Your Order</h1>
 		<p>Your order has been received and is being prepared. We will notify you when your order is ready for pickup or delivery.</p>
-		<button><a routerLink="/home">Return to Home</a></button>
+		<button (click)="returnToHome()">Return to Home</button>
 	</div>
 </body>
 </html>

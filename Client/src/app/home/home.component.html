@@ -29,7 +29,7 @@
         />
         <select [(ngModel)]="searchCity" class="px-4" style="width: 34%" name="City" id="CityId">
           <option value="" selected>Search City</option>
-          <option value="{{Restaurant.city}}" *ngFor="let Restaurant of allRestaurantsList">{{Restaurant.city}}</option>
+          <option [ngValue]="Restaurant.city" *ngFor="let Restaurant of allRestaurantsList">{{Restaurant.city}}</option>
 
         </select>
         <button (click)="OnSearch()" class="btn btn-danger rounded-0" style="width: 24%">
@@ -83,7 +83,7 @@
       <div class=" p-4">
         <h4>{{Restaurant.restaurantName | uppercase}}</h4>
         <p>{{Restaurant.restaurantDescription}}</p>
-          <a class="btn btn-outline-danger" routerLink="/items/{{Restaurant?.id}}" style="cursor: pointer; font-weight: bolder;" >
+          <a class="btn btn-outline-danger" (click)="goToMenu(Restaurant)" style="cursor: pointer; font-weight: bolder;" >
             Menu
            <a style="color: rgb(231, 166, 166); text-decoration: none;" class="fa fa-arrow-right me-2">
           </a>
@@ -91,7 +91,7 @@
       </div>
     </div>
     <div *ngIf="RestaurantsList.length <1">
-      <h1 *ngIf="!RestaurantsList" class="text-center" >No Items Here</h1>
+      <h1 class="text-center" >No Items Here</h1>
     </div>
 
   </div>

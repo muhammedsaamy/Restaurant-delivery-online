@@ -41,7 +41,7 @@
 
                   <div *ngIf="userForm.controls['email'].touched&&userForm.controls['email'].invalid" class="text-danger">
                     <p *ngIf="userForm.controls['email'].errors?.['required']">Email is required</p>
-                    <p *ngIf="userForm.controls['email'].errors?.['email']">Email shoud be valid mail like "mail@gmail.com"</p>
+                    <p *ngIf="userForm.controls['email'].errors?.['pattern']">Email shoud be valid mail like "mail@gmail.com"</p>
                   </div>
                 </div>
 

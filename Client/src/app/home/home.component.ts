@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit{
 
   }
 
+
+
   ngOnInit(): void {
     this.spinner.show();
 
@@ -53,8 +55,57 @@ export class HomeComponent implements OnInit{
     });
   }
 
+
+  // goToMenu(resaurant:any){
+  //   const storedData = localStorage.getItem('BasketItems');
+
+  //   if(storedData){
+  //     const storedDataToCheck = JSON.parse(storedData)
+
+  //    if(storedDataToCheck[0].restaurantName ==  resaurant.restaurantName){
+  //      this.router.navigateByUrl('/items/' + resaurant.id)
+  //   }
+
+  //     if(storedDataToCheck[0].restaurantName !=  resaurant.name){
+  //     if(confirm('If you go back the selected items will be removed ..')){
+  //     localStorage.removeItem('BasketItems');
+  //     this.router.navigateByUrl('/items/' + resaurant.id)
+  //   }}
+
+  //   }
+
+  //   console.log(storedData)
+
+  // }
+
+
+  goToMenu(restaurant: any) {
+    const storedData = localStorage.getItem('BasketItems');
+
+    if (storedData) {
+      const storedDataToCheck = JSON.parse(storedData);
+      console.log(storedDataToCheck)
+      if (storedDataToCheck[0].menuId === restaurant.id) {
+        this.router.navigateByUrl('/items/' + restaurant.id);
+      } else {
+        if (confirm('If you go back the selected items will be removed..')) {
+          localStorage.removeItem('BasketItems');
+          this.router.navigateByUrl('/items/' + restaurant.id);
+        }
+      }
+    } else {
+      this.router.navigateByUrl('/items/' + restaurant.id);
+    }
+
+    console.log(storedData);
+  }
+
+
+
+
+
    OnSearch(){
    this.getRestaurant();
-  console.log(this.searchText)
+  // console.log(this.searchText)
 }
 }

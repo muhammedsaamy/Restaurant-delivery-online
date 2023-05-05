@@ -18,7 +18,6 @@ export class MenuItemsComponent {
 
   }
   ngOnInit(): void {
-    // this.getitems();
     this.getMenuByIdFromUrl()
   }
 
@@ -26,17 +25,36 @@ export class MenuItemsComponent {
     this.id=+this.activatedRoute.snapshot.paramMap.get('id')!;
     this.itemsService.getitems(this.id).subscribe({
       next:(res)=>{
-        this.itemsList = res.menuItem;
-        console.log(res)
+        this.itemsList = res.menuItem.map((item: any) => {
+          item.checked = this.selectedItems.findIndex(i => i.id === item.id) > -1;
+          return item;
+        });
+        // console.log(res)
       }
     });
-    console.log(this.id)
+    // console.log(this.id);
+    const storedData = localStorage.getItem('BasketItems');
+    if (storedData) {
+      this.selectedItems = JSON.parse(storedData);
+      this.itemsList.forEach((item: any) => {
+        item.checked = this.selectedItems.findIndex(i => i.id === item.id) > -1;
+      });
+    }
   }
 
   goBack(){
-    this.location.back();
-  }
+    // const storedData = localStorage.getItem('BasketItems');
 
+    // if(storedData){
+    //   if( confirm('If you go back the selected items will be removed ..')){
+    //     this.location.back();
+    //     localStorage.removeItem('BasketItems');
+    //    }
+    // } else {this.location.back();}
+
+    this.location.back();
+
+  }
 
 
 
@@ -52,7 +70,7 @@ export class MenuItemsComponent {
         this.selectedItems.splice(index, 1);
       }
     }
-    console.log(this.selectedItems);
+    // console.log(this.selectedItems);
 
   }
 

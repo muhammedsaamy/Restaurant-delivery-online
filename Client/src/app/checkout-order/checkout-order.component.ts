@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-order',
@@ -12,6 +13,10 @@ export class CheckoutOrderComponent implements OnInit{
   basketitems:any = []
 
 
+  constructor(private router:Router) {
+
+  }
+
   ngOnInit(): void {
 
     const UserData = localStorage.getItem('UserData');
@@ -21,6 +26,11 @@ export class CheckoutOrderComponent implements OnInit{
     }
     this.basketitems = this.items.map(item => ({...item, quantity:1 , totalPrice: 0}));
 
+  }
+
+  returnToHome(){
+    this.router.navigateByUrl('/home');
+    localStorage.clear(); 
   }
 
 

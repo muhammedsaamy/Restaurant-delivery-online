@@ -7,7 +7,7 @@
             <img class="img-fluid" src="{{item.menuItemImage}}" />
           </div>
           <div style="overflow: hidden;" class=" col-6">
-            <input class="checkbox" type="checkbox" value="{{item.id}}" (change)="updateSelectedItems(item , $event)"> {{item.name}}
+            <input [checked]="item.checked" class="checkbox" type="checkbox" value="{{item.id}}" (change)="updateSelectedItems(item , $event)"> {{item.name}}
             <h4 style="display: inline-block;">{{item.menuItemTitle}}</h4>
             <p>{{item.menuItemDescription}}</p>
           <div class="card card-img-top"> <div class="price-tag"><span>{{item.price| currency}}</span></div> </div>
