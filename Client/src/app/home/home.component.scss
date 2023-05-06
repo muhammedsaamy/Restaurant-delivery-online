@@ -39,4 +39,34 @@
 
 
 
+.img-container {
+  position: relative;
+  display: inline-block;
+  background-color: orange;
+}
+
+.img-container img {
+  display: block;
+  max-width: 100%;
+}
+
+.img-container .icons {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107; /* Replace with your desired warning color */
+}
+
+
+.img-container .icons i {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 15px;
+}
+
+.img-container .icons span {
+  display: inline-block;
+  margin-left: 5px;
+}
 

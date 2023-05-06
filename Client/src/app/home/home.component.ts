@@ -56,29 +56,6 @@ export class HomeComponent implements OnInit{
   }
 
 
-  // goToMenu(resaurant:any){
-  //   const storedData = localStorage.getItem('BasketItems');
-
-  //   if(storedData){
-  //     const storedDataToCheck = JSON.parse(storedData)
-
-  //    if(storedDataToCheck[0].restaurantName ==  resaurant.restaurantName){
-  //      this.router.navigateByUrl('/items/' + resaurant.id)
-  //   }
-
-  //     if(storedDataToCheck[0].restaurantName !=  resaurant.name){
-  //     if(confirm('If you go back the selected items will be removed ..')){
-  //     localStorage.removeItem('BasketItems');
-  //     this.router.navigateByUrl('/items/' + resaurant.id)
-  //   }}
-
-  //   }
-
-  //   console.log(storedData)
-
-  // }
-
-
   goToMenu(restaurant: any) {
     const storedData = localStorage.getItem('BasketItems');
 
@@ -88,7 +65,7 @@ export class HomeComponent implements OnInit{
       if (storedDataToCheck[0].menuId === restaurant.id) {
         this.router.navigateByUrl('/items/' + restaurant.id);
       } else {
-        if (confirm('If you go back the selected items will be removed..')) {
+        if (confirm('If you click "Ok" the selected items will be removed..')) {
           localStorage.removeItem('BasketItems');
           this.router.navigateByUrl('/items/' + restaurant.id);
         }
@@ -99,10 +76,6 @@ export class HomeComponent implements OnInit{
 
     console.log(storedData);
   }
-
-
-
-
 
    OnSearch(){
    this.getRestaurant();
